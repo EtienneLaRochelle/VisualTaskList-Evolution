@@ -1,39 +1,40 @@
-VisualTaskList-Evolution  
-A personal task management evolution showcasing my transition from basic scripts to a structured, professional software architecture.  
+# VisualTaskList-Evolution
 
-Project Overview  
-Originally created to replace disorganized text files, this repository contains two versions of my task manager. It serves as a visual timeline of my growth as a developer, comparing my early logic to the professional standards I apply today.  
+A personal task management evolution showcasing my transition from basic scripts to a structured, professional software architecture.
 
-The Evolution  
+## Project Overview
+Originally created to replace disorganized text files, this repository contains two versions of my task manager. It serves as a visual timeline of my growth as a developer.
 
-[Description](Assets/legacy-v1.png)  
-1. Legacy Version (VisualOrganisationTool)  
-The "Why": Built to solve a personal need to stay organized during my early studies.  
-Tech: .NET Framework 4.7.2, Windows Forms.  
-Focus: Core functionality and UI basics.  
+## The Evolution
 
-[Description](Assets/dashboard-v2.png)  
-2. Current Version (VisualTaskList)  
-The "Why": A complete rewrite to implement industry-standard design patterns and modern frameworks.  
-Tech: .NET 8.0, SQLite.  
+### 1. Legacy Version (VisualOrganisationTool)
+![v1](Assets/legacy-v1.png)
+* **The "Why":** Built to solve a personal need to stay organized during my early studies.
+* **Tech:** .NET Framework 4.7.2, Windows Forms.
+* **Focus:** Core functionality and UI basics.
 
-Improvements:  
--Architecture: Implemented the Model-View-Presenter (MVP) pattern for better separation of concerns.  
--Data Integrity: Moved from local memory/files to a structured SQLite database using the Repository pattern.  
--Scalability: Extensive use of Interfaces to allow for easier testing and future-proofing.  
--Custom UI: Developed custom calendar controls and modular views.  
+### 2. Current Version (VisualTaskList)
+![v2](Assets/dashboard-v2.png)
+* **The "Why":** A complete rewrite to implement industry-standard design patterns and modern frameworks.
+* **Tech:** .NET 8.0, SQLite.
 
-Tech Stack  
--Language: C#  
--Framework: .NET 8.0 (Windows Forms)  
--Database: SQLite  
--Patterns: MVP, Dependency Inversion (Interfaces), Repository Pattern.  
+## Improvements
+* **Architecture:** Implemented the Model-View-Presenter (MVP) pattern.
+* **Data Integrity:** Moved from local files to a structured SQLite database.
+* **Scalability:** Extensive use of Interfaces for easier testing.
+* **Custom UI:** Developed modular views and custom calendar controls.
 
-Structure  
--/VisualTaskList: The modern, refactored implementation.  
--/VisualOrganisationTool_Legacy: The original project files for comparison.  
+## Tech Stack
+* **Language:** C#
+* **Framework:** .NET 8.0 (Windows Forms)
+* **Database:** SQLite
+* **Patterns:** MVP, Repository Pattern, Dependency Inversion.
 
-How to Run  
--Clone the repository.  
--Open VisualTaskList.sln in Visual Studio 2022.  
--Build and Run.  
+## Structure
+* `/VisualTaskList`: The modern, refactored implementation.
+* `/VisualOrganisationTool_Legacy`: The original project files for comparison.
+
+## How to Run
+1. Clone the repository.
+2. Open `VisualTaskList.sln` in Visual Studio 2022.
+3. Build and Run.
