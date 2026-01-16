@@ -12,7 +12,7 @@ The "Why": Built to solve a personal need to stay organized during my early stud
 Tech: .NET Framework 4.7.2, Windows Forms.
 Focus: Core functionality and UI basics.
 
-[Description](Assets/dashboard-v2.png)
+[Description](Assets/dashboard-v2.png)  
 2. Current Version (VisualTaskList)
 The "Why": A complete rewrite to implement industry-standard design patterns and modern frameworks.
 Tech: .NET 8.0, SQLite.
