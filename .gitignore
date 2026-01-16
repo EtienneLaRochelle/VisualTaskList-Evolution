@@ -1,0 +1,18 @@
+# Visual Studio Junk
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.pdb
+
+# Databases (IMPORTANT)
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+
+# OS Junk
+Thumbs.db
+.DS_Store
