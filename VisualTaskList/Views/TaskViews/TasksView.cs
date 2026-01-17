@@ -98,6 +98,8 @@ namespace VisualTaskList.Views.TaskViews
             {
                 taskList.SelectedIndex = selectedIndex;
             }
+
+            UpdateListWidth(tasksList);
         }
 
 
@@ -121,6 +123,28 @@ namespace VisualTaskList.Views.TaskViews
 
             e.Graphics.DrawString($"{task.Category.ShortName} - {task.Title} - {task.DueDate.ToString("dd MMM")}", e.Font, textBrush, textBounds, format);
             e.DrawFocusRectangle();
+        }
+
+
+        private void UpdateListWidth(List<TaskModel> tasks)
+        {
+            taskList.HorizontalScrollbar = true;
+            int maxPixelWidth = 0;
+
+            using (Graphics g = taskList.CreateGraphics())
+            {
+                foreach (var task in tasks)
+                {
+                    string fullText = $"{task.Category.ShortName} - {task.Title} - {task.DueDate.ToString("dd MMM")}";
+                    int itemWidth = (int)g.MeasureString(fullText, taskList.Font).Width;
+                    if (itemWidth > maxPixelWidth)
+                    {
+                        maxPixelWidth = itemWidth;
+                    }
+                }
+            }
+
+            taskList.HorizontalExtent = maxPixelWidth + 10;
         }
 
     }
