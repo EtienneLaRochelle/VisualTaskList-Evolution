@@ -124,6 +124,7 @@
             taskNotes.Location = new Point(3, 19);
             taskNotes.Multiline = true;
             taskNotes.Name = "taskNotes";
+            taskNotes.ScrollBars = ScrollBars.Both;
             taskNotes.Size = new Size(391, 327);
             taskNotes.TabIndex = 5;
             taskNotes.Leave += taskNotes_Leave;

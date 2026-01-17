@@ -156,6 +156,7 @@
             typeNotes.Margin = new Padding(6);
             typeNotes.Multiline = true;
             typeNotes.Name = "typeNotes";
+            typeNotes.ScrollBars = ScrollBars.Both;
             typeNotes.Size = new Size(391, 327);
             typeNotes.TabIndex = 5;
             typeNotes.Leave += TypeNotes_Leave;

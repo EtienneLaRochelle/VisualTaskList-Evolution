@@ -77,6 +77,8 @@ namespace VisualTaskList.Views.TypesViews
             {
                 typeList.SelectedIndex = selectedIndex;
             }
+
+            UpdateListWidth(TypesList);
         }
 
 
@@ -112,5 +114,26 @@ namespace VisualTaskList.Views.TypesViews
             e.DrawFocusRectangle();
         }
 
+
+        private void UpdateListWidth(List<TypeModel> types)
+        {
+            typeList.HorizontalScrollbar = true;
+            int maxPixelWidth = 0;
+
+            using (Graphics g = typeList.CreateGraphics())
+            {
+                foreach (var type in types)
+                {
+                    string fullText = $"{type.Name}";
+                    int itemWidth = (int)g.MeasureString(fullText, typeList.Font).Width;
+                    if (itemWidth > maxPixelWidth)
+                    {
+                        maxPixelWidth = itemWidth;
+                    }
+                }
+            }
+
+            typeList.HorizontalExtent = maxPixelWidth + 10;
+        }
     }
 }

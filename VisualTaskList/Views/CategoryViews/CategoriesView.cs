@@ -76,6 +76,8 @@ namespace VisualTaskList.Views.CategoryViews
             {
                 categoryList.SelectedIndex = selectedIndex;
             }
+
+            UpdateListWidth(categoriesList);
         }
 
 
@@ -99,6 +101,28 @@ namespace VisualTaskList.Views.CategoryViews
 
             e.Graphics.DrawString($"{category.ShortName} - {category.Name}", e.Font, textBrush, textBounds, format);
             e.DrawFocusRectangle();
+        }
+
+
+        private void UpdateListWidth(List<CategoryModel> categories)
+        {
+            categoryList.HorizontalScrollbar = true;
+            int maxPixelWidth = 0;
+
+            using (Graphics g = categoryList.CreateGraphics())
+            {
+                foreach (var category in categories)
+                {
+                    string fullText = $"{category.ShortName} - {category.Name}";
+                    int itemWidth = (int)g.MeasureString(fullText, categoryList.Font).Width;
+                    if (itemWidth > maxPixelWidth)
+                    {
+                        maxPixelWidth = itemWidth;
+                    }
+                }
+            }
+
+            categoryList.HorizontalExtent = maxPixelWidth + 10;
         }
 
     }

@@ -80,6 +80,7 @@
             categoryNotes.Location = new Point(3, 19);
             categoryNotes.Multiline = true;
             categoryNotes.Name = "categoryNotes";
+            categoryNotes.ScrollBars = ScrollBars.Both;
             categoryNotes.Size = new Size(391, 327);
             categoryNotes.TabIndex = 5;
             categoryNotes.Leave += categoryNotes_Leave;
