@@ -25,7 +25,6 @@ namespace VisualTaskList.CustomControls
             Label todayCube = (Label)DayPanel.GetControlFromPosition(0, 0);
             todayCube.Text = today.Day.ToString();
             todayCube.Font = new Font(todayCube.Font, FontStyle.Bold);
-            todayCube.ForeColor = Color.Green;
             for (int i = 0; i < DayPanel.ColumnCount - 1; i++)
             {
                 DateTime day = today.AddDays(i);
