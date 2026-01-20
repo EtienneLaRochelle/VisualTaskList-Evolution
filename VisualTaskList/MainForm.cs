@@ -52,11 +52,11 @@ namespace VisualTaskList
                     Task = t,
                     Offset = (int)(t.DueDate.Date - today).TotalDays
                 })
-                .Where(x => x.Offset >= 0 && x.Offset < 14)
+                .Where(x => x.Offset >= 0 && x.Offset < CubeCalendar.DayPanelLength)
                 .GroupBy(x => x.Offset)
                 .ToDictionary(g => g.Key, g => g.ToList());
 
-            for (int i = 0; i < 14; i++)
+            for (int i = 0; i < CubeCalendar.DayPanelLength; i++)
             {
                 List<Color> colorsForToday = new List<Color>();
 

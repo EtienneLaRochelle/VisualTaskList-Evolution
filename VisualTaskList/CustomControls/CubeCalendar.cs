@@ -16,6 +16,7 @@ namespace VisualTaskList.CustomControls
     public partial class CubeCalendar : UserControl
     {
         public FlowLayoutPanel LegendPanel;
+        public const int DayPanelLength = 14;
 
         public CubeCalendar()
         {
@@ -25,7 +26,6 @@ namespace VisualTaskList.CustomControls
             Label todayCube = (Label)DayPanel.GetControlFromPosition(0, 0);
             todayCube.Text = today.Day.ToString();
             todayCube.Font = new Font(todayCube.Font, FontStyle.Bold);
-            for (int i = 0; i < DayPanel.ColumnCount - 1; i++)
             {
                 DateTime day = today.AddDays(i);
                 if (day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday)

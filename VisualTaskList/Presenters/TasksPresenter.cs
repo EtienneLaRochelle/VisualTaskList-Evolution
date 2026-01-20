@@ -49,7 +49,6 @@ namespace VisualTaskList.Presenters
             _view.SelectedTaskChanged += OnSelectedTaskChanged;
 
             LoadAllTasks();
-            _form = form;
         }
 
 
@@ -234,7 +233,7 @@ namespace VisualTaskList.Presenters
                 TaskModel task = _repository.GetById(id);
                 if (task != null)
                 {
-                    _view.SelectedTaskNotes = _repository.GetById(_view.SelectedTaskId).Notes;
+                    _view.SelectedTaskNotes = task.Notes;
                     return;
                 }
             }

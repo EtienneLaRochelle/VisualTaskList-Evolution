@@ -50,7 +50,11 @@ namespace VisualTaskList.Presenters
                 var types = _repository.GetAll();
                 _view.SetTypesList(types);
                 _form.SetLegendLabels(types);
-                _form.SetCubeCalender(_tasksRepository.GetAll());
+
+                List<TaskModel> tasks = _tasksRepository.GetAll();
+                List<TaskModel> hiddentasks = _tasksRepository.GetAll(true);
+                tasks.AddRange(hiddentasks);
+                _form.SetCubeCalender(tasks);
             }
             catch (Exception error)
             {
