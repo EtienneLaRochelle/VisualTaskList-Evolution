@@ -175,6 +175,7 @@
             MinimizeBox = false;
             Name = "MainForm";
             Text = "VisualTaskList";
+            FormClosing += MainForm_Closing;
             tabControl1.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

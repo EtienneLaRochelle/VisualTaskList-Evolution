@@ -29,7 +29,12 @@ namespace VisualTaskList
                 ErrorText.ForeColor = color;
             };
         }
-       
+
+        private void MainForm_Closing(object sender, FormClosingEventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
 
         public void SetLegendLabels(List<TypeModel> types)
         {

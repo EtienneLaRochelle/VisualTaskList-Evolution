@@ -44,7 +44,7 @@ namespace VisualTaskList.Views.TaskViews.Overlays.HiddenTasks
             }
 
             // Restore previous selection if possible
-            else if (selectedIndex != 0)
+            else if (selectedIndex != -1)
             {
                 hiddenTasksList.SelectedIndex = selectedIndex;
             }

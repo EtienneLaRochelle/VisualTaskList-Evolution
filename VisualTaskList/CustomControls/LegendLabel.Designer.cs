@@ -53,6 +53,7 @@
             // Color
             // 
             Color.BackColor = SystemColors.AppWorkspace;
+            Color.BorderStyle = BorderStyle.FixedSingle;
             Color.Dock = DockStyle.Left;
             Color.Location = new Point(0, 0);
             Color.Margin = new Padding(0);
