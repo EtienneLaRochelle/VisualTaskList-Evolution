@@ -48,6 +48,8 @@ namespace VisualTaskList.Views.TaskViews.Overlays.HiddenTasks
             {
                 hiddenTasksList.SelectedIndex = selectedIndex;
             }
+
+            UpdateListWidth(tasksList);
         }
 
 
@@ -71,6 +73,28 @@ namespace VisualTaskList.Views.TaskViews.Overlays.HiddenTasks
 
             e.Graphics.DrawString($"{task.Category.ShortName} - {task.Title} - {task.DueDate.ToString("dd MMM")}", e.Font, textBrush, textBounds, format);
             e.DrawFocusRectangle();
+        }
+
+
+        private void UpdateListWidth(List<TaskModel> hiddenTasks)
+        {
+            hiddenTasksList.HorizontalScrollbar = true;
+            int maxPixelWidth = 0;
+
+            using (Graphics g = hiddenTasksList.CreateGraphics())
+            {
+                foreach (var task in hiddenTasks)
+                {
+                    string fullText = $"{task.Category.ShortName} - {task.Title} - {task.DueDate.ToString("dd MMM")}";
+                    int itemWidth = (int)g.MeasureString(fullText, hiddenTasksList.Font).Width;
+                    if (itemWidth > maxPixelWidth)
+                    {
+                        maxPixelWidth = itemWidth;
+                    }
+                }
+            }
+
+            hiddenTasksList.HorizontalExtent = maxPixelWidth + 10;
         }
 
     }
